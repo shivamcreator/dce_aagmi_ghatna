@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup # BeautifulSoup is in bs4 package 
+from bs4 import BeautifulSoup 
 import requests
 import webbrowser
 import pyfiglet
@@ -17,9 +17,7 @@ for n in notices:
   list1.append(n.get_text())
 
 project_href = [i['href'] for i in contentDiv.find_all('a', href=True)]
-# for a in announcements:
-#   print(a.get_text())
-#
+
 mapped={}
 
 keys=[]
@@ -49,10 +47,10 @@ while True:
  if(enter in keys):
   
   with yaspin(text="Loading", color="yellow") as spinner:
-   time.sleep(4)  # time consuming code
+   time.sleep(4) 
   webbrowser.open_new("https://ggnindia.dronacharya.info/" + mapped[enter])
 
 
  else:
  
-  print("Enter the correct option")
+  print("Please enter the correct option")
